@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:story_view/story_view.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -20,14 +22,16 @@ class MyApp extends StatelessWidget {
 class Home extends StatelessWidget {
   final StoryController controller = StoryController();
 
+  Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Delicious Ghanaian Meals"),
+        title: const Text("Delicious Ghanaian Meals"),
       ),
       body: Container(
-        margin: EdgeInsets.all(
+        margin: const EdgeInsets.all(
           8,
         ),
         child: ListView(
@@ -59,7 +63,7 @@ class Home extends StatelessWidget {
                     url:
                         "https://image.ibb.co/cU4WGx/Omotuo-Groundnut-Soup-braperucci-com-1.jpg",
                     controller: controller,
-                    caption: Text(
+                    caption: const Text(
                       "Omotuo & Nkatekwan; You will love this meal if taken as supper.",
                       style: TextStyle(
                         color: Colors.white,
@@ -72,7 +76,7 @@ class Home extends StatelessWidget {
                     url:
                         "https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif",
                     controller: controller,
-                    caption: Text(
+                    caption: const Text(
                       "Hektas, sektas and skatad",
                       style: TextStyle(
                         color: Colors.white,
@@ -100,22 +104,22 @@ class Home extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => MoreStories()));
                 },
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Colors.black54,
                       borderRadius:
                           BorderRadius.vertical(bottom: Radius.circular(8))),
-                  padding: EdgeInsets.symmetric(vertical: 8),
+                  padding: const EdgeInsets.symmetric(vertical: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Icon(
+                      const Icon(
                         Icons.arrow_forward,
                         color: Colors.white,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 16,
                       ),
-                      Text(
+                      const Text(
                         "View more stories",
                         style: TextStyle(fontSize: 16, color: Colors.white),
                       ),
@@ -149,7 +153,7 @@ class _MoreStoriesState extends State<MoreStories> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("More"),
+        title: const Text("More"),
       ),
       body: StoryView(
         storyItems: [
@@ -160,7 +164,7 @@ class _MoreStoriesState extends State<MoreStories> {
           StoryItem.text(
             title: "Nice!\n\nTap to continue.",
             backgroundColor: Colors.red,
-            textStyle: TextStyle(
+            textStyle: const TextStyle(
               fontFamily: 'Dancing',
               fontSize: 40,
             ),
